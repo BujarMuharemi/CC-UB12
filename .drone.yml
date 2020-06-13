@@ -1,16 +1,12 @@
 pipeline:
-  steps:
-  
-  - name: maven
-    build:
-      image: maven
-      commands:
-        - mvn assembly:assembly
-        
-  - name: java
+  build:
+    image: maven
+    commands:
+      - mvn assembly:assembly     
+
     image: java	  
     commands:	  
-    - java -jar target/calc-1.0-SNAPSHOT-jar-with-dependencies.jar &	 
+      - java -jar target/calc-1.0-SNAPSHOT-jar-with-dependencies.jar &	 
     
 
 
