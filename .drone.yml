@@ -1,20 +1,7 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: mvn
-  maven_build:
-  script: mvn verify
-
-- name: java
-  image: java
-  commands:
-  - java -jar target/calc-1.0-SNAPSHOT-jar-with-dependencies.jar &
-
-- name: curl
-  image: curl
-  commands:
-  - curl localhost:8080/calc/sum/1/1
+pipeline:
+  build:
+    image: maven
+    commands:
+      - mvn assembly:assembly
 
 
