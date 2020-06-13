@@ -7,7 +7,7 @@ steps:
   image: mvn
   commands:
   - mvn assembly:assembly
-	
+
 - name: java
   image: java
   commands:
