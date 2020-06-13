@@ -6,4 +6,6 @@ steps:
 - name: java
   image: java
   commands:
+  - mvn assembly:assembly
   - java -jar target/calc-1.0-SNAPSHOT-jar-with-dependencies.jar &
+  - curl localhost:8080/calc/sum/1/1
