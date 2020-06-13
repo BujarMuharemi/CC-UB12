@@ -4,9 +4,8 @@ name: default
 
 steps:
 - name: mvn
-  image: mvn
-  commands:
-  - mvn assembly:assembly
+  maven_build:
+  script: mvn verify
 
 - name: java
   image: java
